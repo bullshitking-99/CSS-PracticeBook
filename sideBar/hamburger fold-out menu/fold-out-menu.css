@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  /* make it look decent enough */
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+/* css 作业顺序 - 由外到内，先确定范围大小再逐步精化 先调样式再调动画 循序渐进*/
+#menuToggle {
+  /* relative相对原位置位移没什么不好的，子元素还能使用absolute进行定位 */
+  position: relative;
+  top: 50px;
+  left: 50px;
+  /* avoid user select the text content */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input[type="checkbox"] {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+
+  display: block;
+  /* 相对父级定位，会向上移一个图层，可调整图层 */
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* 汉堡样式与动效  */
+/* ------------------------------------------------- */
+#menuToggle span {
+  display: block;
+  position: relative;
+  background-color: #cdcdcd;
+  z-index: 1;
+  width: 33px;
+  height: 4px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+/* 下面这两个transform-origin必须写在input-checked外面，不然取消check状态后会恢复默认原点 */
+#menuToggle span:nth-child(2) {
+  transform-origin: 4px 0px;
+}
+
+#menuToggle span:nth-child(4) {
+  transform-origin: left bottom;
+}
+
+#menuToggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-2px, -1px);
+  background-color: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+#menuToggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(0, -1px);
+  background-color: #232323;
+}
+
+/* ------------------------------------------------- */
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  list-style: none;
+  background-color: #ededed;
+
+  z-index: 0;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  /* 为所有的transform都设置了缓动效果 包括 checked 和 un-checked*/
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#menu a {
+  display: block;
+  text-decoration: none;
+  color: #232323;
+  font-size: 22px;
+  padding: 10px 0;
+  height: 50px;
+}
+
+/* 将transition放在正常标签里而非伪类中，能避免失去伪类状态后动画效果消失，让特效有始有终更加丝滑 */
+#menu li {
+  width: fit-content;
+  position: relative;
+  transition: all 0.4s;
+}
+
+/* 
+**记录一次超坑 - 放大的是li，li是块级元素，宽度拉满，而文字在li的左侧，
+    即使很小的scale比例也会在横轴上对文字产生很大的位移效果（即文字会奇怪地左移）
+    所以使用transfrom-origin对文字也起不到效果（因为宽度占满了）
+    所以意图放大文字时要注意其载体的宽度和位置，记住始终放大的是载体而不是单纯的文字 */
+
+/*  单纯增加font-size的数值会有严重的字体抖动问题
+    使用transform：scale可以解决这一问题，但是放大方向不如人意
+    使用transform-origin改变放大原点至左侧中线
+    */
+#menu a:hover li {
+  transform: scale(1.1);
+  transform-origin: 0 50%;
+}
+
+#menu a li::after {
+  bottom: 5px;
+  content: "";
+  display: block;
+  width: 0%;
+  height: 15px;
+  z-index: 2;
+  background-color: rgba(255, 99, 72, 0.5);
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  /* 上移 */
+  position: absolute;
+  bottom: -3px;
+}
+
+#menu a:hover li::after {
+  background-color: rgba(255, 99, 72, 0.5);
+  width: 100%;
+}

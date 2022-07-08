@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Fold Out Menu</title>
+    <link rel="stylesheet" href="fold-out-menu.css" />
+  </head>
+  <body>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+        <input type="checkbox" />
+
+        <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+        <ul id="menu">
+          <a href="#"><li>Home</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Info</li></a>
+          <a href="#"><li>Contact</li></a>
+          <a
+            href="https://www.jqhtml.com/yanshi?demourl=wp-content%2Fuploads%2F2016%2F11%2Ftx%2Ftx20161105%2F&demotitle=12%E6%AC%BECSS3%E8%8F%9C%E5%8D%95%E6%8C%89%E9%92%AE%E5%8A%A8%E7%94%BB#"
+            target="_blank"
+            ><li>More Hamburger Menu</li></a
+          >
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+- 使用 `label::before` 和 `label::after` 替代了原生 radio 的样式
+- 使用 `transition: color 0.25s linear` 和 `transition: border-color 0.25s linear` 增添了颜色渐变效果
+- 使用 `transition: all 0.25s linear`能让组件在渲染时产生由小变大的动画效果
+- 我真是服了我再也不乱删 git 了

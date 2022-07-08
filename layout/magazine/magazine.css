@@ -1,0 +1,343 @@
+html {
+  background-color: #aaa;
+}
+body {
+  background-color: #fff;
+  width: 980px;
+  height: 1386px;
+  margin: auto;
+}
+.side {
+  margin: 0 50px;
+}
+/*---------------------------------------------------*/
+header {
+  border-bottom: #938e8c 2px solid;
+  margin-bottom: 20px;
+  position: relative;
+  height: 61px;
+}
+.address {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 110px;
+  height: 61px;
+  background-color: #d55d5c;
+  color: #fff;
+  font-size: 12px;
+  padding-top: 45px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.date {
+  font-size: 12px;
+  color: #d45d5c;
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+}
+/*---------------------------------------------------*/
+
+.half-top {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.img1 {
+  width: 641px;
+  height: 301px;
+  position: relative;
+}
+.img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 191px;
+  height: 301px;
+  background-color: #75b86b;
+  opacity: 50%;
+}
+.img1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 191px;
+  height: 301px;
+  background-color: #d55d5c;
+  opacity: 50%;
+}
+/*---------------------------------------------------*/
+.about {
+  width: 203px;
+  height: 301px;
+  position: absolute;
+  right: 0;
+  border-top: 2px solid #cc8091;
+}
+.about h1 {
+  display: inline-block;
+  border-bottom: #938e8c 2px solid;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.about h1::first-letter {
+  font-size: 35px;
+}
+.about div:first-of-type {
+  color: #676767;
+  font-size: 10px;
+  font-style: italic;
+}
+.seven {
+  color: #75b86b;
+  font-style: italic;
+  font-size: 100px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.three,
+.css {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #cc8091;
+  font-size: 12px;
+}
+.three {
+  font-size: 55px;
+  float: left;
+}
+.css {
+  margin-left: 80px;
+  margin-top: 18px;
+}
+.css span {
+  font-size: 21px;
+}
+.aboutBorder {
+  width: 203px;
+  height: 301px;
+}
+/*---------------------------------------------------*/
+.what,
+.when,
+.how {
+  height: 200px;
+  width: 200px;
+  margin-right: 16px;
+  font-size: 16px;
+  color: #231815;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.what h2,
+.when h2,
+.how h2 {
+  color: #418c59;
+  text-decoration: underline;
+}
+.how p {
+  margin-bottom: 5px;
+}
+.how ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+.how ul span {
+  font-style: italic;
+  opacity: 70%;
+}
+/*---------------------------------------------------*/
+.half-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px #938e8c solid;
+}
+.firstPart {
+  grid-column: 1;
+  width: 415px;
+}
+.secondPart {
+  margin-top: 20px;
+  grid-column: 2;
+}
+/*---------------------------------------------------*/
+.the {
+  color: #11456b;
+  font-size: 35px;
+  font-weight: bold;
+
+  border-bottom: 2px solid;
+}
+.the span {
+  color: #f5e327;
+  font-size: 72px;
+  font-style: italic;
+}
+/*---------------------------------------------------*/
+.qian p:first-of-type::first-letter {
+  color: #f5e327;
+  font-size: 70px;
+  float: left;
+  margin-right: 12px;
+}
+.qian p:first-of-type {
+  margin-bottom: 0;
+}
+.qian p:first-of-type + p {
+  margin: 0;
+}
+.qian p:last-of-type {
+  margin-top: 0;
+}
+.qian .img3 {
+  width: 150px;
+  height: 350px;
+  float: right;
+  margin: 20px;
+  margin-right: 0;
+}
+.qian img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+/*---------------------------------------------------*/
+.slideshow {
+  position: relative;
+  width: 440px;
+  height: 275px;
+  z-index: 0;
+}
+.slideshow::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: url(img2.jpg) no-repeat center/150%;
+  opacity: 0.9;
+  z-index: -1;
+}
+.slideshow div {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  right: 0%;
+  height: 61px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.slideshow div::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  height: 61px;
+  background-color: #000;
+  opacity: 0.9;
+  z-index: -1;
+}
+.slideshow div span:first-of-type {
+  font-size: 26px;
+  border-left: 3px solid #72b16a;
+  display: inline-block;
+  height: 44px;
+  margin-left: 10%;
+  padding-left: 2%;
+  display: flex;
+  align-items: center;
+}
+.slideshow div span:last-of-type {
+  font-style: italic;
+  color: #72b16a;
+  margin-left: 2%;
+}
+/*---------------------------------------------------*/
+.final {
+  background-color: #f5f5dc;
+  color: #5a5b5b;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.final .list {
+  margin-left: 15px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+}
+.final .list ul {
+  list-style-type: circle;
+  line-height: 35px;
+}
+.list li {
+  margin: 5px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+/*---------------------------------------------------*/
+.sao0 {
+  width: 240px;
+  background-color: #d45d5c;
+  color: white;
+  display: flex;
+  height: 150px;
+  align-items: center;
+}
+.sao0 > div:first-of-type {
+  font-size: 86px;
+  margin-left: 10px;
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 2px white solid;
+}
+.sao0 > div:last-of-type {
+  font-style: italic;
+  word-spacing: 2px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+.sao0 > div:last-of-type > div {
+  margin-top: 5px;
+  font-style: normal;
+  font-size: 15px;
+}
+/*---------------------------------------------------*/
+.helloworld {
+  width: 180px;
+  padding: 0 10px;
+  color: #5a5b5b;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.helloworld > span:first-of-type {
+  font-size: 60px;
+  float: left;
+  height: 26px;
+  margin-right: 5px;
+}
+.helloworld p span:last-of-type {
+  font-size: 60px;
+  float: right;
+  height: 26px;
+}
+.helloworld p {
+  margin-top: 25px;
+  margin-bottom: 0;
+}

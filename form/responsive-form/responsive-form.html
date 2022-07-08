@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>just css</title>
+    <link rel="stylesheet" href="responsive-form.css" />
+  </head>
+  <body>
+    <form action="#">
+      <h1>Register</h1>
+      <label for="fullName">Full Name</label>
+      <input
+        type="text"
+        name="fullName"
+        id="fullName"
+        placeholder="Your full name"
+      />
+      <br />
+      <label for="userName">User Name</label>
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        placeholder="User Name"
+      />
+      <br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Your password"
+      />
+      <br />
+      <label for="address">Address</label>
+      <select name="address" id="address">
+        <option value="china" selected>China</option>
+        <option value="america">America</option>
+        <option value="canada">Canada</option>
+      </select>
+      <br />
+      <label for="suggestion"> Suggestion </label>
+      <textarea
+        name="suggestion"
+        id="suggestion"
+        cols="30"
+        rows="10"
+        placeholder="Write something..."
+      ></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

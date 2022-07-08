@@ -1,0 +1,58 @@
+html {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+div {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  font-size: large;
+  transition: all 1s ease;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+div::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: white;
+  transition: all 1s ease;
+  z-index: -1;
+  border-radius: 100%;
+}
+
+div:hover {
+  letter-spacing: 0.5em;
+  transform: scale(3);
+  color: black;
+  box-shadow: 1px 1px 15px white;
+  background-color: gray;
+}
+
+div:hover::after {
+  height: 100%;
+  width: 100%;
+}

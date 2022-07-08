@@ -1,0 +1,82 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+form {
+  text-align: center;
+  width: 70%;
+  box-shadow: 0px 4px 15px 2px #008b8b;
+  border-radius: 5px;
+  border-top: 5px #008b8b solid;
+}
+h1 {
+  color: #008b8b;
+}
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  margin: 10px 0;
+  border: none;
+  background-color: whitesmoke;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 70%;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: middle;
+}
+textarea {
+  resize: vertical;
+  min-height: 60px;
+  max-height: 80px;
+}
+label {
+  display: inline-block;
+  width: 20%;
+}
+input[name="userName"] {
+  background-image: url(/CSS/user_logo.png);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 5%;
+  padding-left: 35px;
+}
+button {
+  border: none;
+  background-color: #008b8b;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 4px;
+  float: right;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+form::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+@media (max-width: 600px) {
+  form {
+    text-align: left;
+  }
+  h1 {
+    text-align: center;
+  }
+  label,
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+    display: inline-block;
+    width: 90%;
+    margin: 5px 5%;
+  }
+  button {
+    width: 90%;
+    margin: 5%;
+  }
+}
